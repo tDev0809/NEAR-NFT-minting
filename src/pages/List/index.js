@@ -2,18 +2,25 @@ import React from 'react';
 import InputSelect from './InputSelect';
 import NFTItem from './NFTItem';
 
-import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
+import Stack from '@mui/material/Stack';
+import Container from '@mui/material/Container';
+import Typography from '@mui/material/Typography';
 
 
 export default function ListNFTs() {
 
     return (
-        <Container sx={{ pt: 10 }}>
+        <Container>
             <InputSelect />
-            <Grid container mt={5}>
-                <NFTItem />
-            </Grid>
+            <Stack mt={1}>
+                <Typography mt={1} gutterBottom variant="h4" component="span">
+                    {'QSTN List'}
+                </Typography>
+                <Grid container mt={2}>
+                    <NFTItem />
+                </Grid>
+            </Stack>
         </Container>
     )
 }

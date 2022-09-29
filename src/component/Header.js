@@ -5,6 +5,10 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import { utils } from 'near-api-js';
 import { truncate } from '../utils/service';
 import { useWallet } from '../contexts/accounts';
@@ -14,12 +18,25 @@ import logo from '../assets/logo.webp';
 export default function Header() {
     const wallet = useWallet();
     const navigator = useNavigate();
+    const [anchorEl, setAnchorEl] = useState(null);
+    const open = Boolean(anchorEl);
 
     const [account, setAccount] = useState({
         connected: false,
         walletAddress: "",
         balance: 0,
     });
+
+    const handleMenuClick = (event) => {
+        setAnchorEl(event.currentTarget);
+    };
+    const handleMenuClose = () => {
+        setAnchorEl(null);
+    };
+    const handleMenuChange = (url) => {
+        navigator(`/${url}`)
+        handleMenuClose()
+    }
 
     const connectNearWallet = async () => {
         wallet.requestSignIn();
@@ -76,16 +93,47 @@ export default function Header() {
                 justifyContent: 'flex-end',
                 py: 1
             }}>
-                <Button
+                {!account.connected ? <Button
                     sx={{ textTransform: 'unset', mx: 2 }}
                     variant="outlined"
                     onClick={() => window.open('https://wallet.near.org/create', '_blank')}
                 >
                     Create a NEAR wallet
                 </Button>
+                    :
+                    (<>
+                        <Button
+                            id="basic-button"
+                            aria-controls={open ? 'basic-menu' : undefined}
+                            aria-haspopup="true"
+                            aria-expanded={open ? 'true' : undefined}
+                            endIcon={<ExpandMoreIcon />}
+                            variant="outlined"
+                            sx={{ textTransform: 'unset', mx: 2 }}
+                            onClick={handleMenuClick}
+                        >
+                            QSTNs
+                        </Button>
+                        <Menu
+                            id="basic-menu"
+                            anchorEl={anchorEl}
+                            open={open}
+                            onClose={handleMenuClose}
+                            MenuListProps={{
+                                'aria-labelledby': 'basic-button',
+                            }}
+                        >
+                            <MenuItem onClick={() => handleMenuChange('list')}>QSTNs List</MenuItem>
+                            <MenuItem onClick={() => handleMenuChange('rankcheck')}>Rank Check</MenuItem>
+                            <MenuItem onClick={() => handleMenuChange('mint')}>Mint</MenuItem>
+                            <MenuItem onClick={() => handleMenuChange('mylist')}>My QSTNs</MenuItem>
+                        </Menu>
+                    </>
+                    )
+                }
                 {
                     account && account.connected ?
-                        <Button variant="contained" style={{ display: 'flex', textTransform: 'unset' }} >
+                        <Button variant="outlined" style={{ display: 'flex', textTransform: 'unset' }} >
                             <Typography>
                                 {`${truncate(account.walletAddress, [5, 5])}`}
                             </Typography>

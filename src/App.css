@@ -1,13 +1,13 @@
 .nft-card-item {
-  margin: 5px;
+  margin: 10px;
   padding: 15px;
   flex-grow: 1;
   position: relative;
+  transition: all 0.5s ease 0s !important;
 }
 
 .nft-card-item:hover {
-  box-shadow: rgb(159 135 135 / 70%) 0px 0px 22px 0px, rgb(255 250 250 / 50%) 1px 2px 5px 1px, rgb(255 255 255 / 4%) 0px 1px 0px 0px inset;
-  transition-duration: 1000ms;
+  transform: scale(1.01);
 }
 
 .nft-attr {
