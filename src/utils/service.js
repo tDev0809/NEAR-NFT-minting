@@ -12,8 +12,6 @@ const provider = new providers.JsonRpcProvider(
 );
 
 
-
-
 export const checkAdmin = () => {
   const admin = AdminUsers.find((item) => item === discordUserData?.username || item === discordUserData?.id)
   return admin ? true : false;

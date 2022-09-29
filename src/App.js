@@ -8,12 +8,15 @@ import Loadable from './utils/loadable'
 import { Buffer } from "buffer";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './App.css'
 
-const Layout = Loadable(lazy(() => import("./component/layout")));
+const Layout = Loadable(lazy(() => import("./component/Layout")));
+const NFTList = Loadable(lazy(() => import("./pages/List")))
 
 const Raffle = Loadable(lazy(() => import("./pages/raffle")));
 const Account = Loadable(lazy(() => import("./pages/account")))
 const CreateNewRaffle = Loadable(lazy(() => import("./pages/create")));
+
 
 
 // eslint-disable-next-line no-undef
@@ -40,7 +43,8 @@ export default function App() {
       <Router>
         <Routes >
           <Route element={<Layout />}>
-            <Route path="/raffles" element={<Raffle />} />
+            <Route path="/" element={<NFTList />} />
+            <Route path="/list" element={<Raffle />} />
             <Route path="/create-new" element={<CreateNewRaffle />} />
             <Route path="/account" element={<Account />} />
           </Route>
