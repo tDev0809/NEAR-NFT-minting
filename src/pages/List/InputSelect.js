@@ -42,7 +42,7 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function InputSelect() {
-    const [sortMethod, setSortMethod] = React.useState('');
+    const [sortMethod, setSortMethod] = React.useState('rankASC');
 
     const handleChange = (event) => {
         setSortMethod(event.target.value);

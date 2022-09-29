@@ -15,7 +15,6 @@ const NFTList = Loadable(lazy(() => import("./pages/List")))
 const RarityRank = Loadable(lazy(() => import("./pages/RarityRank")))
 const Mint = Loadable(lazy(() => import("./pages/Mint")))
 
-const Account = Loadable(lazy(() => import("./pages/account")))
 
 // eslint-disable-next-line no-undef
 globalThis.Buffer = Buffer;
@@ -45,7 +44,7 @@ export default function App() {
             <Route path="/list" element={<NFTList />} />
             <Route path="/rankcheck" element={<RarityRank />} />
             <Route path="/mint" element={<Mint />} />
-            <Route path="/mylist" element={<Account />} />
+            <Route path="/mylist" element={<Mint />} />
           </Route>
         </Routes>
       </Router>

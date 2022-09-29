@@ -5,6 +5,7 @@ import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import ButtonGroup from '@mui/material/ButtonGroup';
 
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
@@ -18,6 +19,7 @@ import logo from '../assets/logo.webp';
 export default function Header() {
     const wallet = useWallet();
     const navigator = useNavigate();
+    const [clickedWButton, setClickedWButton] = useState(false);
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
 
@@ -40,6 +42,11 @@ export default function Header() {
 
     const connectNearWallet = async () => {
         wallet.requestSignIn();
+    };
+
+    const disconnectNearWallet = async () => {
+        wallet.signOut();
+        window.location.reload();
     };
 
     const getAccountDetail = async () => {
@@ -133,17 +140,29 @@ export default function Header() {
                 }
                 {
                     account && account.connected ?
-                        <Button variant="outlined" style={{ display: 'flex', textTransform: 'unset' }} >
-                            <Typography>
-                                {`${truncate(account.walletAddress, [5, 5])}`}
-                            </Typography>
-                            <Typography className="hide-text-m">
-                                &nbsp;| &nbsp;
-                            </Typography>
-                            <Typography className="hide-text-m">
-                                {`${account.balance.toFixed(3)} NEAR`}
-                            </Typography>
-                        </Button>
+                        !clickedWButton ?
+                            <Button
+                                variant="outlined"
+                                style={{ display: 'flex', textTransform: 'unset' }}
+                                onClick={() => setClickedWButton(true)}
+                            >
+                                <Typography>
+                                    {`${truncate(account.walletAddress, [5, 5])}`}
+                                </Typography>
+                                <Typography className="hide-text-m">
+                                    &nbsp;| &nbsp;
+                                </Typography>
+                                <Typography className="hide-text-m">
+                                    {`${account.balance.toFixed(3)} NEAR`}
+                                </Typography>
+                            </Button>
+                            :
+                            (
+                                <ButtonGroup variant="outlined" aria-label="outlined button group">
+                                    <Button color="error" onClick={disconnectNearWallet}>Disconnect</Button>
+                                    <Button color="success" onClick={() => setClickedWButton(false)}>Back</Button>
+                                </ButtonGroup>
+                            )
                         :
                         <Button
                             sx={{ textTransform: 'unset' }}
