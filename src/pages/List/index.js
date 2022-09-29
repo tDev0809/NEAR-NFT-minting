@@ -17,6 +17,7 @@ export default function ListNFTs() {
                 <Typography mt={1} gutterBottom variant="h4" component="span">
                     {'QSTN List'}
                 </Typography>
+                dafsfas
                 <Grid container mt={2}>
                     <NFTItem />
                 </Grid>

@@ -15,7 +15,7 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
         borderRadius: 4,
         position: 'relative',
         width: '200px',
-        backgroundColor: theme.palette.background.paper,
+        backgroundColor: '#28282b',
         border: '1px solid #ced4da',
         fontSize: 16,
         padding: '10px 26px 10px 12px',

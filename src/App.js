@@ -5,14 +5,15 @@ import { initialCrossword, WalletContext } from "./contexts/accounts";
 import { Routes, Route } from "react-router-dom";
 import Loadable from './utils/loadable'
 
+import { MUISnackbar } from "./utils/Sanckbar";
 import { Buffer } from "buffer";
-import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css'
 
 const Layout = Loadable(lazy(() => import("./component/Layout")));
 const NFTList = Loadable(lazy(() => import("./pages/List")))
 const RarityRank = Loadable(lazy(() => import("./pages/RarityRank")))
+const Mint = Loadable(lazy(() => import("./pages/Mint")))
 
 const Account = Loadable(lazy(() => import("./pages/account")))
 
@@ -43,12 +44,12 @@ export default function App() {
             <Route path="/" element={<NFTList />} />
             <Route path="/list" element={<NFTList />} />
             <Route path="/rankcheck" element={<RarityRank />} />
-            <Route path="/mint" element={<NFTList />} />
+            <Route path="/mint" element={<Mint />} />
             <Route path="/mylist" element={<Account />} />
           </Route>
         </Routes>
       </Router>
-      <ToastContainer />
+      <MUISnackbar data={null} />
       {/* </Suspense> */}
     </WalletContext.Provider>
   );
