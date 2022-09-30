@@ -88,7 +88,7 @@ export default function RarityRank() {
                 </Button>
             </Stack>
             {nftShow &&
-                <Card className='nft-card-item' sx={{ display: 'flex', height: '100% !important', width: '60%', margin: 'auto', mt: 2 }}>
+                <Card className='nft-card-item' sx={{ display: 'flex', height: '100% !important', width: '60%', margin: 'auto', my: 3 }}>
                     <Stack sx={{ position: 'relative', width: '100%' }}>
                         <CardMedia
                             component="img"
