@@ -29,6 +29,7 @@ export default function MintImageSection() {
                         {...srcset(item.img, 175, item.rows, item.cols)}
                         alt={item.title}
                         loading="lazy"
+                        style={{ opacity: 0.8 }}
                     />
                 </ImageListItem>
             ))}
