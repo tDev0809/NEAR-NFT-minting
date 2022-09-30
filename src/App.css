@@ -7,6 +7,7 @@
   flex-grow: 1;
   position: relative;
   transition: all 0.5s ease 0s !important;
+  background-color: #00c0ff0a !important;
 }
 
 .nft-card-item:hover {
@@ -15,7 +16,7 @@
 
 .nft-attr {
   width: 48%;
-  background: #353131;
+  background: #3af9ff10;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -24,8 +25,7 @@
 }
 
 .nft-attr:hover {
-  box-shadow: rgb(159 135 135 / 20%) 3px 6px 13px 0px, rgb(255 250 250 / 12%) 1px 2px 5px 1px, rgb(255 255 255 / 4%) 0px 1px 0px 0px inset;
-  cursor: pointer;
+  box-shadow: rgb(17 16 16 / 65%) 1px 3px 10px 0px, rgb(8 8 8 / 0%) 0px 1px 0px 0px inset;
   transition-duration: 200ms;
 }
 
@@ -39,6 +39,7 @@
   border-radius: 5px !important;
   width: 90% !important;
   margin: auto !important;
+  opacity: 0.9 !important;
 }
 
 .nft-name-text {
@@ -68,7 +69,7 @@ body {
 
 .area {
   background: transparent;
-  background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
+  /* background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8); */
   width: 100%;
   height: 100vh;
   position: fixed;

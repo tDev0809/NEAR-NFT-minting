@@ -49,7 +49,7 @@ export default function MainLayout() {
             <AppBar position="fixed">
                 <Header />
             </AppBar>
-            <Box component="main" className="rdc-pd-m" sx={{ flexGrow: 1, pt: 14 }}>
+            <Box component="main" className="rdc-pd-m" sx={{ bgcolor: '#102b30', flexGrow: 1, pt: 14 }}>
                 <Outlet />
                 {/* <Footer /> */}
             </Box>
