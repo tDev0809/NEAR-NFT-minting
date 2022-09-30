@@ -189,3 +189,18 @@ body {
   }
 
 }
+
+::-webkit-scrollbar-track {
+  border: 1px solid #102b30;
+  background-color: #204e62;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: #dfe6e9;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #74b9ff;
+  border-radius: 10px;
+}
