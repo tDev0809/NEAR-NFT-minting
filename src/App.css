@@ -7,7 +7,7 @@
   flex-grow: 1;
   position: relative;
   transition: all 0.5s ease 0s !important;
-  background-color: #00c0ff0a !important;
+  background-color: #1d434473 !important;
 }
 
 .nft-card-item:hover {
@@ -39,7 +39,7 @@
   border-radius: 5px !important;
   width: 90% !important;
   margin: auto !important;
-  opacity: 0.9 !important;
+  opacity: 0.8 !important;
 }
 
 .nft-name-text {
