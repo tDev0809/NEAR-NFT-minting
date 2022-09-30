@@ -83,7 +83,7 @@ export default function RarityRank() {
                     value={typedId}
                     onChange={(e) => setTypedId(e.target.value)}
                 />
-                <Button variant='contained' onClick={showNFT} sx={{ mx: 1 }}>
+                <Button variant='outlined' color="info" onClick={showNFT} sx={{ mx: 1 }}>
                     Confirm
                 </Button>
             </Stack>

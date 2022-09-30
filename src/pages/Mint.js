@@ -34,7 +34,7 @@ export default function Mint() {
                     value={typedNum}
                     onChange={(e) => setTypedNum((prev) => prev >= 0 ? e.target.value : 0)}
                 />
-                <Button variant='contained' sx={{ width: '300px', mx: 1 }}>
+                <Button variant='outlined' color="primary" sx={{ width: '300px', mx: 1 }}>
                     Generate a QSTN
                 </Button>
             </Stack>

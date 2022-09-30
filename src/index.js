@@ -18,6 +18,13 @@ const theme = createTheme({
       lg: 1200, // desktop
       xl: 1536 // large screens
     }
+  },
+  components: {
+    MuiPaper: {
+      styleOverrides: {
+        root: { background: 'transparent' }
+      }
+    }
   }
 })
 

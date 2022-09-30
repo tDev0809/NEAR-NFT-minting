@@ -5,7 +5,7 @@ import { styled, } from '@mui/material/styles';
 import Box from '@mui/material/Box';
 import MuiAppBar from '@mui/material/AppBar';
 import CssBaseline from '@mui/material/CssBaseline';
-import Footer from "./Footer";
+// import Footer from "./Footer";
 
 const drawerWidth = 0;
 
@@ -49,7 +49,7 @@ export default function MainLayout() {
             <AppBar position="fixed">
                 <Header />
             </AppBar>
-            <Box component="main" className="rdc-pd-m" sx={{ flexGrow: 1, pt: 14 }}>
+            <Box component="main" className="rdc-pd-m" sx={{ bgcolor: '#102b30', flexGrow: 1, pt: 14 }}>
                 <Outlet />
                 {/* <Footer /> */}
             </Box>
