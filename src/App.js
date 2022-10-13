@@ -10,7 +10,7 @@ import { Buffer } from "buffer";
 import 'react-toastify/dist/ReactToastify.css';
 import './App.css'
 
-const Layout = Loadable(lazy(() => import("./component/Layout")));
+const Layout = Loadable(lazy(() => import("./component/Layouts")));
 const NFTList = Loadable(lazy(() => import("./pages/List")))
 const RarityRank = Loadable(lazy(() => import("./pages/RarityRank")))
 const Mint = Loadable(lazy(() => import("./pages/Mint")))
