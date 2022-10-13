@@ -7,7 +7,7 @@
   flex-grow: 1;
   position: relative;
   transition: all 0.5s ease 0s !important;
-  background-color: #00c0ff0a !important;
+  background-color: #1d434473 !important;
 }
 
 .nft-card-item:hover {
@@ -39,7 +39,7 @@
   border-radius: 5px !important;
   width: 90% !important;
   margin: auto !important;
-  opacity: 0.9 !important;
+  opacity: 0.8 !important;
 }
 
 .nft-name-text {
@@ -188,4 +188,19 @@ body {
     border-radius: 50%;
   }
 
+}
+
+::-webkit-scrollbar-track {
+  border: 1px solid #102b30;
+  background-color: #204e62;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  background-color: #dfe6e9;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #74b9ff;
+  border-radius: 10px;
 }
